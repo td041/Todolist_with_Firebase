@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto";
+}
+input {
+  font-family: inherit;
+}
+.todo-app {
+  border: 1px solid #ddd;
+  width: 500px;
+  margin: 50px auto;
+  border-radius: 8px;
+  background: #f6f6f6;
+  font-family: "Roboto";
+  padding: 30px;
+}
+
+.todo-app__title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  color: orange;
+}
+
+.todo-app__create {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo-app__create input {
+  flex: 1;
+  height: 42px;
+  padding: 0 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  outline: 0;
+}
+
+.todo-app__create button {
+  font-size: 20px;
+  border: 0;
+  background: orange;
+  width: 42px;
+  height: 42px;
+  border-radius: 0 8px 8px 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.todo-app__item {
+  background: #fff;
+  padding: 15px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.todo-app__item--complete {
+  background-color: #d8f0c1;
+}
+
+.todo-app__item-content {
+  flex: 1;
+}
+
+.todo-app__item-button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.todo-app__item-button--edit {
+  background: #ffc400;
+}
+
+.todo-app__item-button--complete {
+  background: #60c700;
+}
+
+.todo-app__item-button--delete {
+  background: #c70000;
+  color: #fff;
+}
+
+.todo-app__item-button--undo {
+  background: #5a2d00;
+  color: #fff;
+}
+
+.alert-list {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.alert {
+  background-color: gray;
+  width: 250px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.alert--success {
+  background-color: #60c700;
+}
+
+.alert__content {
+  font-size: 16px;
+  font-family: Arial;
+}
+
+.alert__close {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.alert__close:hover {
+  color: red;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__main {
+  width: 40%;
+  padding: 25px;
+  border-radius: 8px;
+  background-color: #fff;
+  z-index: 99;
+  position: relative;
+}
+
+.modal__close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 32px;
+  height: 32px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal__overlay {
+  background-color: #00000065;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__main {
+  width: 40%;
+  max-width: 400px;
+  padding: 25px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.modal__close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 32px;
+  height: 32px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.modal__content {
+  margin-top: 20px;
+}
+
+.modal__text {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.button__close,
+.button__agree {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.button__close {
+  background-color: #f44336;
+  color: white;
+}
+
+.button__agree {
+  background-color: #4caf50;
+  color: white;
+}
+
+.button__close:hover,
+.button__agree:hover {
+  opacity: 0.8;
+}
+input[name="content"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+input[class="edit"] {
+  margin-bottom: 20px;
+}
+input[name="content"]:focus {
+  border-color: #4caf50; /* Màu viền khi focus */
+}
